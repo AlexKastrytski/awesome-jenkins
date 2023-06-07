@@ -38,7 +38,7 @@
         name: python3-pip
         state: present
       become: true
-      tags: [ step3, step4, step5, step6 ]
+      tags: [ step3, step4, step5, step6, step7 ]
     - name: Install python-jenkins
       ansible.builtin.pip:
         name:

@@ -16,6 +16,7 @@
     jenkins_multibranch_job_config: "{{ lookup('template', 'multibranch-pipeline-config.xml.j2') }}"
     jenkins_job_name: pipeline-job
     jenkins_multibranch_job_name: multi-pipeline-job
+    multibranch_repository_url: "https://github.com/Alliedium-demo-test/springboot-api-rest-example.git"
 
   pre_tasks:
     - include_vars: jenkins_plugins.yml
@@ -50,7 +51,7 @@
         script: "{{ jenkins_maven_template }}"
         user: "{{ jenkins_admin_username }}"
         password: "{{ jenkins_admin_password }}"
-        url: "http://127.0.0.1:{{ jenkins_http_port }}"
+        url: "http://localhost:{{ jenkins_http_port }}"
         validate_certs: false
         timeout: 120
       with_items: jenkins_maven_installation
